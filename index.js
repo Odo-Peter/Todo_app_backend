@@ -10,6 +10,7 @@ const Todo = require('./models/todo');
 app.use(cors());
 app.use(express.json());
 app.use(morgan('dev'));
+app.use(express.static('build'));
 
 app.get('/personal/todos', (req, res) => {
   Todo.find({}).then((todos) => {
